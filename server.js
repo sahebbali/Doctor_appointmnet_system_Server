@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 const bodyParser = require("body-parser");
 
 //dotenv conig
@@ -24,6 +25,8 @@ app.use(moragan("dev"));
 
 //routes
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/admin", adminRoutes);
+
 
 //port
 const port = process.env.PORT || 8080;
