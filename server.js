@@ -2,8 +2,10 @@ const express = require("express");
 const colors = require("colors");
 const moragan = require("morgan");
 const dotenv = require("dotenv");
+const cors = require("cors");
 const connectDB = require("./config/db");
-const userRoutes = require("./routes/userRoutes")
+const userRoutes = require("./routes/userRoutes");
+const bodyParser = require("body-parser");
 
 //dotenv conig
 dotenv.config();
@@ -15,7 +17,9 @@ connectDB();
 const app = express();
 
 //middlewares
+app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json())
 app.use(moragan("dev"));
 
 //routes
