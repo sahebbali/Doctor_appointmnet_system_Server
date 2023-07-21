@@ -6,6 +6,7 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+const doctorRoutes = require("./routes/doctorRoutes");
 const bodyParser = require("body-parser");
 
 //dotenv conig
@@ -26,6 +27,7 @@ app.use(moragan("dev"));
 //routes
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/admin", adminRoutes);
+app.use("/api/v1/doctor", doctorRoutes);
 
 
 //port
